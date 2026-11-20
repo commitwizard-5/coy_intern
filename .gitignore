@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+coy-discover/node_modules/
+
+# next.js build output
+.next/
+coy-discover/.next/
+out/
+build/
+
+# local database
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+coy-discover/prisma/dev.db*
+
+# environment variables
+.env
+.env*.local
+coy-discover/.env
+!coy-discover/.env.example
+
+# debug & logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# system & IDE
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+coy-discover/next-env.d.ts

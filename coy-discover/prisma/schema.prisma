@@ -1,0 +1,52 @@
+// Prisma Schema for Coy Discover
+// Run: npx prisma db push
+// Seed: npx prisma db seed
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id             Int      @id @default(autoincrement())
+  name           String
+  age            Int
+  photo          String // URL to profile picture
+  bio            String
+  city           String
+  college        String? // nullable — not everyone shows college
+  interests      String // comma-separated: "music,travel,coffee"
+  isCurrentUser  Boolean  @default(false)
+  swipesMade     Swipe[]  @relation("SwipedBy")
+  swipesReceived Swipe[]  @relation("SwipedOn")
+  matchesAsUser1 Match[]  @relation("MatchUser1")
+  matchesAsUser2 Match[]  @relation("MatchUser2")
+  createdAt      DateTime @default(now())
+}
+
+model Swipe {
+  id        Int      @id @default(autoincrement())
+  swiper    Profile  @relation("SwipedBy", fields: [swiperId], references: [id])
+  swiperId  Int
+  swiped    Profile  @relation("SwipedOn", fields: [swipedId], references: [id])
+  swipedId  Int
+  action    String // "LIKE" or "PASS"
+  createdAt DateTime @default(now())
+
+  @@unique([swiperId, swipedId]) // one swipe per pair
+}
+
+model Match {
+  id        Int      @id @default(autoincrement())
+  user1     Profile  @relation("MatchUser1", fields: [user1Id], references: [id])
+  user1Id   Int
+  user2     Profile  @relation("MatchUser2", fields: [user2Id], references: [id])
+  user2Id   Int
+  matchedAt DateTime @default(now())
+
+  @@unique([user1Id, user2Id]) // one match per pair
+}
