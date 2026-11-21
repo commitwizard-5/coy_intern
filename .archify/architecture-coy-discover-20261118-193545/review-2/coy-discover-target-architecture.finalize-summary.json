@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\Acer\\OneDrive\\Desktop\\cloy sde intern\\.archify\\architecture-coy-discover-20261118-193545\\candidate.json",
+    "sha256": "e678518d7ecba4c8b91e6cfd8479266e8b891511b3c2ccb230b3af78a8fc3e10",
+    "bytes": 3505
+  },
+  "artifact": {
+    "path": "C:\\Users\\Acer\\OneDrive\\Desktop\\cloy sde intern\\.archify\\architecture-coy-discover-20261118-193545\\coy-discover-target-architecture.html",
+    "sha256": "1bbfa35326e4be3ebf4ffe2c93798f05287160506f86efd0f79a6ad62305f159",
+    "bytes": 839475
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\Acer\\OneDrive\\Desktop\\cloy sde intern\\.archify\\architecture-coy-discover-20261118-193545\\review-2\\coy-discover-target-architecture.finalize.json",
+    "summaryReceipt": "C:\\Users\\Acer\\OneDrive\\Desktop\\cloy sde intern\\.archify\\architecture-coy-discover-20261118-193545\\review-2\\coy-discover-target-architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\Acer\\OneDrive\\Desktop\\cloy sde intern\\.archify\\architecture-coy-discover-20261118-193545\\review-2\\coy-discover-target-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-18T14:08:04.889Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 7285,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}
